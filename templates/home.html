@@ -1,0 +1,24 @@
+{% extends 'base.html' %} 
+
+ 
+
+{% block content %}
+<h2>Ask any question you want</h2>
+
+<form method="post">
+
+{% csrf_token %} 
+
+<input type="text" class="form-control" name="user_input">
+<button type="submit" class="btn btn-warning px-3 py-2 mt-3">Post</button>
+
+
+</form>
+
+{% if response %}
+<div class="mt-2">{{response| safe}}</div>
+{%endif%}
+
+
+
+{%endblock content%}
